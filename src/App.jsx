@@ -2,12 +2,11 @@ import "./App.css";
 import Header from "./Component/Header";
 import Filter from "./Component/Filter";
 import GiftItem from "./Component/GiftItem";
-import ModalProductDetail from "./Component/ModalProductDetail";
 function App() {
   const dataProduct = [
     {
       title: "Granola siêu hạt ăn kiêng 15% yến mạch",
-      price: "133.000 VND",
+      price: "140.000 VND",
       discount: "99",
       image: "./public/1.png",
     },
@@ -19,7 +18,7 @@ function App() {
     },
     {
       title: "Ngũ hạt thập cẩm, 135g, hũ",
-      price: "133.000 VND",
+      price: "160.000 VND",
       discount: "99",
       image: "./public/3.png",
     },
@@ -53,7 +52,6 @@ function App() {
       <Header />
       <Filter />
       <GiftItem dataProduct={dataProduct} />
-      <ModalProductDetail />
     </div>
   );
 }
