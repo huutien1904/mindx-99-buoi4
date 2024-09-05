@@ -3,6 +3,9 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 export default function Filter() {
+  const handleFilterStatus = (value) => {
+    console.log(value.target.value);
+  };
   return (
     <div>
       <div className="favorite-section-header">
@@ -13,11 +16,10 @@ export default function Filter() {
         </div>
 
         <div className="filter-options">
-          <select className="filter-option">
-            <option>Trạng thái</option>
-            <option>Đang bán</option>
-            <option>Hết hàng</option>
-            <option>Ngưng bán</option>
+          <select className="filter-option" onChange={handleFilterStatus}>
+            <option value={"all"}>Tất cả</option>
+            <option value={"inStock"}>Còn hàng</option>
+            <option value={"outOfStock"}>Hết hàng</option>
           </select>
 
           <select className="filter-option">

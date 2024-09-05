@@ -3,7 +3,9 @@
   /* max-width: 848px; */
   box-sizing: border-box;
 }
-
+p {
+  margin: 0px;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -74,7 +76,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
 }
 
 .product-card .price {
@@ -105,4 +106,9 @@
 .pagination span:hover {
   background-color: #ff6600;
   color: white;
+}
+.status-product {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
 }

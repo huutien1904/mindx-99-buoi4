@@ -12,9 +12,6 @@ const GiftItem = (props) => {
     setProductInfo(product);
     setIsOpenModal(true);
   };
-  const closeModalItem = () => {
-    setIsOpenModal(false);
-  };
   return (
     <>
       <div className="app-container">
