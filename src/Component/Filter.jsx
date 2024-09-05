@@ -2,9 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
-export default function Filter() {
+export default function Filter(props) {
+  // eslint-disable-next-line react/prop-types
+  const { filterProduct } = props;
   const handleFilterStatus = (value) => {
-    console.log(value.target.value);
+    filterProduct(value.target.value);
   };
   return (
     <div>

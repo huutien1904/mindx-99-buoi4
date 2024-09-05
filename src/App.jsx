@@ -2,8 +2,10 @@ import "./App.css";
 import Header from "./Component/Header";
 import Filter from "./Component/Filter";
 import GiftItem from "./Component/GiftItem";
+import { useState } from "react";
+import ModalProductCreate from "./Component/ModalProductCreate";
 function App() {
-  const dataProduct = [
+  const dataInit = [
     {
       title: "Granola siêu hạt ăn kiêng 15% yến mạch",
       rate: 3,
@@ -101,11 +103,31 @@ function App() {
         "Ngũ hạt thập cẩm đặc sản Langfarm - Món ăn vặt ưa thích, hương vị thơm ngon, an toàn vệ sinh. Phù hợp làm quà vào các dịp lễ, thân thiện với mọi nhà",
     },
   ];
+  const [dataProduct, setDataProduct] = useState(dataInit);
+  const [isOpenModalCreateProduct, setIsOpenModalCreateProduct] = useState(false);
+  const openModalCreate = () => {
+    setIsOpenModalCreateProduct(true);
+  };
+  const closeModalCreate = () => {
+    setIsOpenModalCreateProduct(false);
+  };
+  const filterProduct = (data) => {
+    if (data === "all") {
+      setDataProduct(dataInit);
+    } else {
+      const newData = dataInit.filter((product) => {
+        return product.status === data;
+      });
+      setDataProduct(newData);
+    }
+  };
+
   return (
     <div className="content">
       <Header />
-      <Filter />
-      <GiftItem dataProduct={dataProduct} />
+      <Filter filterProduct={filterProduct} />
+      <GiftItem dataProduct={dataProduct} openModalCreate={openModalCreate} />
+      <ModalProductCreate isOpenModalCreateProduct={isOpenModalCreateProduct} closeModalCreate={closeModalCreate} />
     </div>
   );
 }

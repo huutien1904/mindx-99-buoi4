@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 
 const GiftItem = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { dataProduct } = props;
+  const { dataProduct, openModalCreate } = props;
   const [productInfoItem, setProductInfo] = useState({});
   const [isOpenModal, setIsOpenModal] = useState(false);
   const getInfo = (product) => {
@@ -17,7 +17,9 @@ const GiftItem = (props) => {
       <div className="app-container">
         <div className="header">
           <h1 className="title">Quà tặng</h1>
-          <button className="create-button">Tạo</button>
+          <button className="create-button" onClick={openModalCreate}>
+            Tạo
+          </button>
         </div>
         <div className="product-grid">
           {dataProduct?.map((product, index) => {
