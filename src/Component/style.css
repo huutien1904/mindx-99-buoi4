@@ -213,10 +213,31 @@
   justify-content: flex-end;
   padding: 10px 0px;
   margin-bottom: 20px;
+  padding: 0 10px;
+  font-size: 30px;
+}
+.name-product{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .formbold-form-input {
   text-align: center;
-  width: 100%;
+  width: 70%;
+  padding: 13px 22px;
+  border-radius: 5px;
+  border: 1px solid #dde3ec;
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  color: #536387;
+  outline: none;
+  resize: none;
+}
+.formbold-form-number{
+  text-align: center;
+  width: 20%;
   padding: 13px 22px;
   border-radius: 5px;
   border: 1px solid #dde3ec;
@@ -237,4 +258,8 @@
   line-height: 24px;
   display: block;
   margin-bottom: 10px;
+  width: 30%;
+}
+.content{
+  width: 100%;
 }
